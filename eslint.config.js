@@ -10,7 +10,10 @@ export default [
     files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        ...globals.node, // Adicione globals para Node.js
+      },
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
@@ -33,6 +36,21 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+    },
+  },
+  {
+    env: {
+      node: true,  // Define o ambiente para Node.js
+      es2021: true,  // Permite o uso de funcionalidades do ES2021
+    },
+    extends: [
+      'eslint:recommended',  // Configurações recomendadas do ESLint
+    ],
+    parserOptions: {
+      ecmaVersion: 12,  // Isso corresponde ao ES2021
+    },
+    rules: {
+      // suas regras personalizadas aqui
     },
   },
 ]
