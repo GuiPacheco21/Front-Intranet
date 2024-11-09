@@ -1,0 +1,59 @@
+.dashboard-container {
+    background: linear-gradient(to right, #f0f4f8, #e2e6ea);
+    padding: 2rem;
+    border-radius: 10px;
+    min-height: 100vh;
+    width: 100vw; /* Garante que preencha toda a largura da viewport */
+    margin: 0; /* Remove margens que podem limitar a largura */
+  }
+  
+  .dashboard-header {
+    text-align: center;
+    margin-top: 55px;
+    margin-bottom: 2rem;
+    color: #343a40;
+  }
+  
+  .dashboard-card {
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .card-text {
+    margin: 0.5rem 0 0 0;
+  }
+  
+  .list-unstyled li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Estilos específicos para telas maiores */
+  @media (min-width: 992px) {
+    .dashboard-container {
+      padding: 3rem;
+    }
+  }
+  
+  /* Estilos para telas 2K e maiores */
+  @media (min-width: 2048px) {
+    .dashboard-container {
+      padding: 4rem; /* Ajuste o preenchimento conforme necessário */
+    }
+  }
+  

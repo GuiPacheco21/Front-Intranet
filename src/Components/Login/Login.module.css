@@ -1,0 +1,111 @@
+/* Tela de Login */
+.loginPage {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/src/assets/Imagem1.jpg'); /* Caminho para a imagem de fundo */
+    background-size: cover;
+    backdrop-filter: blur(8px); /* Efeito de desfoque no fundo */
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 550px;  /* Largura máxima do formulário */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo semitransparente */
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  
+  .container form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;  /* Centraliza o formulário */
+  }
+  
+  .container h1 {
+    text-align: center;
+    font-size: 30px;
+    color: #fff;  /* Título em branco */
+    margin-bottom: 20px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  /* Estilos dos campos de entrada */
+  .input-field {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .input-field input {
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 20px;  /* Ajuste do padding */
+    padding-left: 40px;  /* Espaçamento à esquerda para o ícone */
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .input-field input::placeholder {
+    color: #fff;
+  }
+  
+  .input-field .icon {
+    position: absolute;
+    left: 15px; /* Ajuste para o ícone */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #fff;
+  }
+  
+  /* Estilos do botão */
+  .container button {
+    width: 100%;  /* Botão ocupa toda a largura do formulário */
+    height: 50px;
+    background-color: #3498db;  /* Cor do fundo do botão */
+    color: #fff;  /* Cor do texto */
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;  /* Espaçamento entre o botão e o campo de input */
+    transition: background-color 0.3s;  /* Efeito de transição no hover */
+  }
+  
+  .container button:hover {
+    background-color: #2980b9; /* Cor do botão quando passa o mouse */
+  }
+  
+  /* Estilo para links de cadastro */
+  .container .signup-link {
+    text-align: center;
+    margin: 20px 0 10px;
+  }
+  
+  .signup-link p {
+    color: #fff;
+  }
+  
+  .signup-link a {
+    color: #fff;
+    text-decoration: none;
+  }
+  

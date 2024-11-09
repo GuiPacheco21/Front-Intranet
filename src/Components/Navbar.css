@@ -1,0 +1,47 @@
+/* Estilização da Navbar */
+.navbar {
+    background-color: #f8f9fa;  /* Mantém o estilo padrão do Bootstrap */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+  }
+  
+  /* Estilização para centralizar os itens */
+  .navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;  /* Espaço entre a logo e os itens */
+    align-items: center;  /* Alinha os itens verticalmente */
+  }
+  
+  /* Estilização dos itens do menu (nav-item) */
+  .nav-item {
+    margin-left: 15px;  /* Adiciona espaçamento entre os itens */
+  }
+  
+  /* Estilização personalizada para os links (nav-link) */
+  .nav-link.nav-custom {
+    font-size: 18px;  /* Aumenta o tamanho da fonte */
+    font-weight: 500;  /* Ajusta o peso da fonte */
+    color: #333;  /* Cor personalizada */
+    padding: 10px 15px;  /* Espaçamento interno dos links */
+    text-align: center;  /* Centraliza o texto */
+    transition: color 0.3s ease; /* Adiciona transição suave na cor */
+  }
+  
+  .nav-link.nav-custom:hover {
+    color: #007bff;  /* Cor de hover para os links */
+  }
+  
+  /* Estilização adicional para a responsividade */
+  @media (max-width: 991.98px) {
+    .navbar .container-fluid {
+        justify-content: flex-start;  /* Em telas menores, mantém a logo à esquerda */
+    }
+    
+    .nav-item {
+        margin-left: 10px;  /* Reduz o espaçamento entre os itens em telas pequenas */
+    }
+  
+    .nav-link.nav-custom {
+        font-size: 16px;  /* Reduz o tamanho da fonte em telas menores */
+    }
+  }
+  

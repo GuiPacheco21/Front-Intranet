@@ -1,0 +1,67 @@
+/* Financeiro.css */
+
+.financeiro-container {
+    padding: 20px;
+    max-width: 1200px; /* Define uma largura máxima para a centralização */
+    margin: 70px auto 0; /* Margem superior para evitar sobreposição com a navbar */
+}
+
+.nav {
+    margin-bottom: 20px; /* Espaço entre a navbar e o conteúdo */
+    /* Removido margin-top aqui, pois agora está no financeiro-container */
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Gera colunas de cards flexíveis */
+    gap: 20px; /* Espaçamento entre os cards */
+    justify-items: center; /* Centraliza os itens horizontalmente */
+}
+
+.card {
+    display: flex;
+    flex-direction: column; /* Permite que o título e o botão fiquem em coluna */
+    justify-content: space-between; /* Espaça os elementos no card */
+    height: 100%; /* Garante que os cards ocupem toda a altura disponível */
+    border: 1px solid #e0e0e0; /* Adiciona uma borda ao card */
+    border-radius: 8px; /* Arredonda os cantos do card */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para o card */
+    transition: transform 0.2s; /* Transição suave para hover */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Eleva o card ao passar o mouse */
+}
+
+.card-body {
+    padding: 20px; /* Espaçamento interno do card */
+    text-align: center; /* Centraliza o texto */
+}
+
+.icon {
+    font-size: 40px; /* Tamanho do ícone */
+    color: #007bff; /* Cor do ícone */
+    margin-bottom: 15px; /* Espaçamento abaixo do ícone */
+}
+
+.card-title {
+    font-size: 1.5rem; /* Tamanho do título */
+    margin-bottom: 10px; /* Espaço abaixo do título */
+}
+
+.card-text {
+    font-size: 1rem; /* Tamanho do texto do card */
+    color: #6c757d; /* Cor do texto */
+    margin-bottom: 20px; /* Espaço abaixo do texto */
+}
+
+.btn {
+    margin-top: auto; /* Empurra o botão para o final do card */
+}
+
+/* Media query para responsividade */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta o tamanho dos cards em telas menores */
+    }
+}

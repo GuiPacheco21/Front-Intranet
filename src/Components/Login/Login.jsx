@@ -1,22 +1,20 @@
-import { FaUser, FaLock } from "react-icons/fa";
-import React from 'react'; 
-import { useState } from "react";
-import "./login.css";
+import React, { useState } from 'react';
+import { FaUser, FaLock } from 'react-icons/fa';
+import styles from './Login.module.css';
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setError("");
-
+    setError('');
     try {
-      const response = await fetch("http://localhost:3000/auth/login", {
-        method: "POST",
+      const response = await fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email: username, senha: password }),
       });
@@ -24,52 +22,45 @@ const Login = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Erro ao fazer login");
+        throw new Error(data.message || 'Erro ao fazer login');
       }
 
-      // Aqui você pode armazenar o token, redirecionar ou qualquer outra lógica
-      alert("Login bem-sucedido! Token: " + data.token);
+      localStorage.setItem('authToken', data.token);
+      // Redireciona o usuário após o login bem-sucedido
+      window.location.href = '/dashboard'; // Exemplo de redirecionamento
+
     } catch (err) {
       setError(err.message);
     }
   };
 
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit}>
-        <h1>Acesse o sistema</h1>
-        {error && <div className="error">{error}</div>}
-        <div className="input-field">
-          <input
-            type="email"
-            placeholder="E-mail"
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-          <FaUser className="icon" />
-        </div>
-        <div className="input-field">
-          <input
-            type="password"
-            placeholder="Senha"
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <FaLock className="icon" />
-        </div>
-        <div className="recall-forget">
-          <label>
-            <input type="checkbox" />
-            Lembre de mim
-          </label>
-          <a href="mailto:guilherme@infranetworks.com.br">Esqueceu a senha?</a>
-        </div>
-        <button>Entrar</button>
-        <div className="signup-link">
-          <p>Não tem uma conta?</p>
-          <a href="mailto:guilherme@infranetworks.com.br">Clique aqui para solicitar a criação de sua conta ao administrador.</a>
-        </div>
-      </form>
+    <div className={styles.loginPage}>
+      <div className={styles.container}>
+        <form onSubmit={handleSubmit}>
+          <h1>Acesse o sistema</h1>
+          {error && <div className="error">{error}</div>}
+          <div className={styles['input-field']}>
+            <input
+              type="email"
+              placeholder="E-mail"
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <FaUser className={styles.icon} />
+          </div>
+          <div className={styles['input-field']}>
+            <input
+              type="password"
+              placeholder="Senha"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <FaLock className={styles.icon} />
+          </div>
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
     </div>
   );
 };
