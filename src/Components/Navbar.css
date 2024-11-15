@@ -1,6 +1,6 @@
 /* Estilização da Navbar */
 .navbar {
-    background-color: #f8f9fa;  /* Mantém o estilo padrão do Bootstrap */
+    background-color: #fff;  /* Mantém o estilo padrão do Bootstrap */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
   }
   

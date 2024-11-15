@@ -17,9 +17,9 @@ function Navbar() {
       <div className="container-fluid justify-content-center">
         <Link className="navbar-brand" to="/">
           <img 
-            src="/images/logo.png"
+            src="/src/assets/logo-Photoroom.png"
             alt="Logo"
-            style={{ width: '310px', height: '60px', padding: '1px', marginLeft: '10px' }}
+            style={{ width: '50px'}}
           />
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

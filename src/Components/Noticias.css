@@ -1,48 +1,68 @@
 /* Noticias.css */
+
+/* Container de notícias com padding e margem adequados */
 .noticias-container {
-    background-color: #f8f9fa; /* Cor de fundo clara */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
+  background-color: #f8f9fa; /* Cor de fundo clara */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;  /* Garantir que o contêiner ocupe 100% da largura */
+  max-width: 1200px; /* Definindo uma largura máxima para o container */
+  margin: 0 auto; /* Centraliza o container na tela */
+}
+
+/* Ajustando o título */
+h1.text-center {
+  width: 100%; /* O título deve ocupar toda a largura do contêiner */
+  text-align: center; /* Centraliza o título */
+  margin: 0 auto; /* Garantir que o título seja centralizado */
+  font-size: 2rem; /* Tamanho maior para o título */
+  white-space: normal; /* Permite quebra de linha se necessário */
+  word-wrap: break-word; /* Quebra a palavra se necessário */
+  padding: 10px 0; /* Espaçamento acima e abaixo do título */
+}
+
+/* Estilo para os cartões */
+.card {
+  border: 1px solid #e0e0e0; /* Borda mais clara para os cartões */
+  border-radius: 8px; /* Bordas arredondadas */
+  transition: transform 0.2s; /* Efeito de transição */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.card-title {
+  color: #007bff; /* Cor do título mais destacada */
+  font-size: 1.2rem; /* Aumenta o tamanho da fonte do título */
+}
+
+.card-body {
+  background-color: #ffffff; /* Fundo branco para o corpo do cartão */
+}
+
+.card-text {
+  font-size: 0.9rem; /* Tamanho da fonte para a descrição */
+}
+
+.btn-primary {
+  background-color: #0056b3; /* Cor do botão mais escura */
+  border-color: #004085; /* Cor da borda do botão */
+  font-size: 0.9rem; /* Tamanho da fonte do botão */
+}
+
+.btn-primary:hover {
+  background-color: #004085; /* Cor do botão ao passar o mouse */
+  border-color: #003768; /* Cor da borda ao passar o mouse */
+}
+
+@media (max-width: 768px) {
   .card {
-    border: 1px solid #e0e0e0; /* Borda mais clara para os cartões */
-    border-radius: 8px; /* Bordas arredondadas */
-    transition: transform 0.2s; /* Efeito de transição */
-  }
-  
-  .card:hover {
-    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
-  }
-  
-  .card-title {
-    color: #007bff; /* Cor do título mais destacada */
-    font-size: 1.2rem; /* Aumenta o tamanho da fonte do título */
-  }
-  
-  .card-body {
-    background-color: #ffffff; /* Fundo branco para o corpo do cartão */
-  }
-  
-  .card-text {
-    font-size: 0.9rem; /* Tamanho da fonte para a descrição */
-  }
-  
-  .btn-primary {
-    background-color: #0056b3; /* Cor do botão mais escura */
-    border-color: #004085; /* Cor da borda do botão */
-    font-size: 0.9rem; /* Tamanho da fonte do botão */
-  }
-  
-  .btn-primary:hover {
-    background-color: #004085; /* Cor do botão ao passar o mouse */
-    border-color: #003768; /* Cor da borda ao passar o mouse */
-  }
-  
-  @media (max-width: 768px) {
-    .card {
       margin-bottom: 20px; /* Espaço entre os cartões em telas menores */
-    }
   }
-  
+
+  h1.text-center {
+      font-size: 1.5rem; /* Reduzir o tamanho da fonte do título em telas pequenas */
+  }
+}

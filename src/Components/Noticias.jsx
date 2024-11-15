@@ -4,12 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Noticias = () => {
   const [noticias, setNoticias] = useState([]);
-  const apiKey = import.meta.env.VITE_NEWS_API_KEY; // Chave de API carregada do .env.local
+  const apiKey = '5f6c344a045f4ff6b9d4633475f4a3cf'; // Chave de API
 
   useEffect(() => {
     const fetchNoticias = async () => {
       try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${apiKey}`);
+        // Substituindo API_KEY pela variável apiKey
+        const response = await fetch(`https://newsapi.org/v2/everything?q=tesla&from=2024-10-15&sortBy=publishedAt&apiKey=${apiKey}`);
         const data = await response.json();
 
         if (data.status === 'ok') {
@@ -27,7 +28,8 @@ const Noticias = () => {
 
   return (
     <div className="noticias-container">
-      <h1 className="text-center">Últimas Notícias de Tecnologia</h1>
+      {/* Ajuste no título */}
+      <h1 className="text-center my-4">Últimas Notícias de Tecnologia</h1> {/* 'my-4' adiciona margem vertical */}
       <div className="row">
         {noticias.length > 0 ? (
           noticias.map((noticia, index) => (
