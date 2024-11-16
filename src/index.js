@@ -30,7 +30,7 @@ initializeDbConnection();
 
 // Opções do CORS
 const corsOptions = {
-    origin: ['http://localhost:5173', 'http://localhost:5174'],
+    origin: ['http://localhost:5173', 'http://localhost:5174', 'https://intranet-one-taupe.vercel.app'],
     methods: 'GET,POST,PUT,DELETE',  // Se necessário, adicione os métodos HTTP que você deseja permitir
     credentials: true,  // Caso você precise enviar cookies ou cabeçalhos de autenticação
 };
