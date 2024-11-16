@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from './Components/Dashboard';
 import Financeiro from './Components/Financeiro/Financeiro';
@@ -15,17 +15,31 @@ import PrivateRoute from './Components/PrivateRoute'; // Importando a PrivateRou
 import Navbar from './Components/Navbar';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Verifica se o token está presente ao carregar o App
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, []); // Verifica uma vez ao montar o componente
+
   return (
     <Router>
-      {/* Navbar ficará visível apenas quando o usuário estiver autenticado */}
-      <Navbar />
-
+      {/* A Navbar deve ser renderizada apenas quando o usuário estiver autenticado */}
+      {isAuthenticated && <Navbar />}
+      
       <Routes>
         {/* Rota pública para login */}
         <Route path="/login" element={<Login />} />
 
-        {/* Rotas privadas com a proteção do PrivateRoute */}
-        <Route path="/" element={<PrivateRoute element={Dashboard} />} />
+        {/* Rota principal para o Dashboard (protegida pela PrivateRoute) */}
+        <Route path="/dashboard" element={<PrivateRoute element={Dashboard} />} />
+
+        {/* Outras rotas privadas */}
         <Route path="/financeiro" element={<PrivateRoute element={Financeiro} />} />
         <Route path="/financeiro/cadastro-entrada" element={<PrivateRoute element={CadastroEntrada} />} />
         <Route path="/financeiro/cadastro-saida" element={<PrivateRoute element={CadastroSaida} />} />
@@ -36,8 +50,8 @@ function App() {
         <Route path="/clientes" element={<PrivateRoute element={Clientes} />} />
         <Route path="/noticias" element={<PrivateRoute element={Noticias} />} />
 
-        {/* Redirecionamento para a página inicial caso a rota não seja encontrada */}
-        <Route path="*" element={<Navigate to="/" />} />
+        {/* Redireciona para o login se a rota não for encontrada */}
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </Router>
   );

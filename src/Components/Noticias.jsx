@@ -4,13 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Noticias = () => {
   const [noticias, setNoticias] = useState([]);
-  const apiKey = '5f6c344a045f4ff6b9d4633475f4a3cf'; // Chave de API
+  const apiKey = '486091b10ca4461f960af8765c44f4a7'; // Chave de API
 
   useEffect(() => {
     const fetchNoticias = async () => {
       try {
         // Substituindo API_KEY pela variável apiKey
-        const response = await fetch(`https://newsapi.org/v2/everything?q=tesla&from=2024-10-15&sortBy=publishedAt&apiKey=${apiKey}`);
+        const response = await fetch(`https://newsapi.org/v2/everything?q=tesla&from=2024-10-16&sortBy=publishedAt&apiKey=${apiKey}`);
         const data = await response.json();
 
         if (data.status === 'ok') {
